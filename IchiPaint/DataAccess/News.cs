@@ -410,5 +410,23 @@ namespace IchiPaint.DataAccess
                 return new DataSet();
             }
         }
+
+        // get phong thủy
+        public DataSet Feng_Shui_GetAll()
+        {
+            try
+            {
+                var spParameter = new SqlParameter[0];
+                var ds = SqlHelper.ExecuteDataset(ConfigInfo.ConnectString, CommandType.Text,
+                    "SELECT * from Feng_Shui order by YearOfBirthDay", spParameter);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                Logger.Log.Error(ex.ToString());
+                return new DataSet();
+            }
+        }
+
     }
 }

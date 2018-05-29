@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Runtime.InteropServices;
+using IchiPaint.DataAccess;
 using Microsoft.Office.Interop.Excel;
+using NaviCommon;
 
 namespace IchiPaint.Common
 {
@@ -76,7 +79,13 @@ namespace IchiPaint.Common
             };
             PhongThuyDictionary = new Dictionary<int, Menh>();
 
-            var arrMenh = ReadFileExcel(filePath);
+            //var arrMenh = ReadFileExcel(filePath);
+
+            NewsDA _NewsDA = new NewsDA();
+            DataSet _ds = _NewsDA.Feng_Shui_GetAll();
+            List<Menh> arrMenh = CBO.Fill2ListFromDataSet<Menh>(_ds, typeof(Menh));
+
+
             var start = 1948;
             foreach (var item in arrMenh)
             {
