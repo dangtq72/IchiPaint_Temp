@@ -17,6 +17,8 @@ namespace IchiPaint.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult List()
         {
+            if (DataMemory.CurrentUser == null)
+                return RedirectToAction("Logout", "Admin");
             var request = new SearchProjectRequest
             {
                 CurrentPage = 1,
@@ -30,6 +32,8 @@ namespace IchiPaint.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            if (DataMemory.CurrentUser == null)
+                return RedirectToAction("Logout", "Admin");
             return View();
         }
 
@@ -53,6 +57,8 @@ namespace IchiPaint.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
+            if (DataMemory.CurrentUser == null)
+                return RedirectToAction("Logout", "Admin");
             var project =
                 (Project)CBO.FillObjectFromDataSet(_projectDa.GetById(id), typeof(Project));
 
