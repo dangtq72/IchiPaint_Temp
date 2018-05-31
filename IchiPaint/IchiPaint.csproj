@@ -64,7 +64,7 @@
     </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\General\dll\log4net.dll</HintPath>
+      <HintPath>..\..\..\General\dll\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
@@ -1095,9 +1095,18 @@
     <Content Include="Content\ckfinder\skins\v1\uipanel.css" />
     <Content Include="Content\ckfinder\translations.txt" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\Upload\images\001_s99x66.jpg" />
+    <Content Include="Content\Upload\images\002_s99x66.jpg" />
+    <Content Include="Content\Upload\images\003_s99x66.jpg" />
+    <Content Include="Content\Upload\images\004_s99x66.jpg" />
+    <Content Include="Content\Upload\images\005_s99x66.jpg" />
+    <Content Include="Content\Upload\images\006_s99x66.jpg" />
+    <Content Include="Content\Upload\images\007_s99x66.jpg" />
+    <Content Include="Content\Upload\images\008_s99x66.jpg" />
     <Content Include="Content\Upload\images\banner-.png" />
     <Content Include="Content\Upload\images\banner-1-.png" />
     <Content Include="Content\Upload\images\Logo.png" />
+    <Content Include="Content\Upload\images\spin.svg" />
     <Content Include="Content\Upload\_thumbs\Images\banner-.png" />
     <Content Include="Content\Upload\_thumbs\Images\banner-1-.png" />
     <Content Include="Content\Images\img-not-available.jpg" />
@@ -1249,6 +1258,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jssor.slider-27.1.0.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="Scripts\script.js" />
