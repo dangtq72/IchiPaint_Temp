@@ -181,13 +181,16 @@
     <Compile Include="Areas\Admin\Controllers\PageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProjectController.cs" />
+    <Compile Include="Common\Email.cs" />
     <Compile Include="Common\PhongThuy.cs" />
     <Compile Include="Common\DataMemory.cs" />
     <Compile Include="Common\SQLHelper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DataAccess\Page.cs" />
     <Compile Include="DataAccess\Products.cs" />
     <Compile Include="DataAccess\News.cs" />
     <Compile Include="DataAccess\Project.cs" />
+    <Compile Include="DataAccess\Users.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -196,12 +199,15 @@
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\RegisterAdvisory.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Content\css\dataTables.bootstrap4.css" />
     <Content Include="Areas\Admin\Content\css\sb-admin.css" />
     <Content Include="Areas\Admin\Content\css\sb-admin.min.css" />
+    <Content Include="Areas\Admin\Content\login.css" />
     <Content Include="Areas\Admin\Scripts\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Areas\Admin\Scripts\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Areas\Admin\Scripts\bootstrap\css\bootstrap-reboot.css" />
@@ -1265,6 +1271,7 @@
     <Content Include="Scripts\select2.min.js" />
     <Content Include="Scripts\sweetalert.min.js" />
     <Content Include="Scripts\Validate.js" />
+    <Content Include="Template\DangKyTuVan.html" />
     <Content Include="Template\Product.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1275,12 +1282,13 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
@@ -1296,6 +1304,12 @@
     <Content Include="Views\Home\OutstandingProject.cshtml" />
     <Content Include="Template\Menh.xls" />
     <Content Include="Views\Home\PhongThuy.cshtml" />
+    <Content Include="Views\Home\RegisterAdvisory.cshtml" />
+    <Content Include="Views\Home\CalculatorPaint.cshtml" />
+    <Content Include="Views\Home\ContactUs.cshtml" />
+    <Content Include="Views\Home\AgencyPolicy.cshtml" />
+    <Content Include="Views\Home\ProductCertification.cshtml" />
+    <Content Include="Views\Home\AboutUs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

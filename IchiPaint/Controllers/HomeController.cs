@@ -354,8 +354,63 @@ namespace IchiPaint.Controllers
                 Status = false
             });
         }
-
-        
         #endregion
+
+        [HttpGet]
+        [Route("dang-ky-tu-van.htm")]
+        public ActionResult RegisterAdvisory()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("register-advisory")]
+        public ActionResult RegisterAdvisory(RegisterAdvisory request)
+        {
+            var emailInfo = DataMemory.EmailOriginal;
+
+            emailInfo.Content = string.Format(ConfigInfo.EmailTemplate, request.FullName, request.Phone, request.Email,
+                request.AppointmentDate, request.Content);
+
+            emailInfo.MailTo = request.Email;
+            var result =  EmailHelper.SendMail(emailInfo, out var oMsg);
+
+            return Json(new
+            {
+                Status = result
+            });
+        }
+
+        //dich-vu/cong-cu-tinh-luong-son.htm
+
+        [HttpGet]
+        [Route("dich-vu/cong-cu-tinh-luong-son.htm")]
+        public ActionResult CalculatorPaint()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [Route("chung-nhan-san-pham.htm")]
+        public ActionResult ProductCertification()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [Route("chinh-sach-dai-ly.htm")]
+        public ActionResult AgencyPolicy()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [Route("gioi-thieu.htm")]
+        public ActionResult AboutUs()
+        {
+            return View();
+        }
+        
+
     }
 }

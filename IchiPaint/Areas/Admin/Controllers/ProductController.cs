@@ -21,6 +21,8 @@ namespace IchiPaint.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult GroupList()
         {
+            if (DataMemory.CurrentUser == null)
+                return RedirectToAction("Logout", "Admin");
             var request = new SearchGroupProductRequest
             {
                 CurrentPage = 1,
@@ -36,6 +38,8 @@ namespace IchiPaint.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult CreateGroup()
         {
+            if (DataMemory.CurrentUser == null)
+                return RedirectToAction("Logout", "Admin");
             return View();
         }
 
@@ -59,6 +63,8 @@ namespace IchiPaint.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult EditGroup(int id)
         {
+            if (DataMemory.CurrentUser == null)
+                return RedirectToAction("Logout", "Admin");
             var groupProduct =
                 (GroupProducts) CBO.FillObjectFromDataSet(_productDa.GetGroupById(id), typeof(GroupProducts));
 
@@ -132,6 +138,8 @@ namespace IchiPaint.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult ListProduct()
         {
+            if (DataMemory.CurrentUser == null)
+                return RedirectToAction("Logout", "Admin");
             var request = new SearchProductRequest()
             {
                 CurrentPage = 1,
@@ -147,6 +155,8 @@ namespace IchiPaint.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult CreateProduct()
         {
+            if (DataMemory.CurrentUser == null)
+                return RedirectToAction("Logout", "Admin");
             ViewBag.GroupProduct = GetGroupProduct();
             return View();
         }
@@ -171,6 +181,8 @@ namespace IchiPaint.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult EditProduct(int id)
         {
+            if (DataMemory.CurrentUser == null)
+                return RedirectToAction("Logout", "Admin");
             var product = (Products) CBO.FillObjectFromDataSet(_productDa.GetProductById(id), typeof(Products));
             ViewBag.GroupProduct = GetGroupProduct();
             return View("~/Areas/Admin/Views/Product/EditProduct.cshtml", product);

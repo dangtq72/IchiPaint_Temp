@@ -16,6 +16,8 @@ namespace IchiPaint.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult List()
         {
+            if (DataMemory.CurrentUser == null)
+                return RedirectToAction("Logout", "Admin");
             var request = new SearchNewsRequest
             {
                 CurrentPage = 1,
@@ -31,6 +33,8 @@ namespace IchiPaint.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            if (DataMemory.CurrentUser == null)
+                return RedirectToAction("Logout", "Admin");
             return View();
         }
 
@@ -60,6 +64,8 @@ namespace IchiPaint.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult EditNews(int id)
         {
+            if (DataMemory.CurrentUser == null)
+                return RedirectToAction("Logout", "Admin");
             var news = (News)CBO.FillObjectFromDataSet(_newsDa.GetById(id), typeof(News));
 
             return View("~/Areas/Admin/Views/News/Edit.cshtml", news);

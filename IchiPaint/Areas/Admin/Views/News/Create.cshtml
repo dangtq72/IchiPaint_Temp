@@ -78,7 +78,6 @@
         };
 
         axios.post("/News/Create", request).then(function (response) {
-            console.log(response);
             var data = response.data;
             if (data.Status) {
                 swal({

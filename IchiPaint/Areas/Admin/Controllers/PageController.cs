@@ -8,10 +8,6 @@ namespace IchiPaint.Areas.Admin.Controllers
 {
     public class PageController : Controller
     {
-        // GET: Admin/Page
-        public ActionResult Index()
-        {
-            return View();
-        }
+         
     }
 }
